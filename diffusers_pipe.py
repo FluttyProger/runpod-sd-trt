@@ -399,7 +399,7 @@ class DiffusersPipeline:
 
         torch.cuda.synchronize()
 
-        outputs = self.create_output(latents, "hz", return_dict)
+        outputs = self.create_output(latents, output_type, return_dict)
 
         for enterer in enterers:
             enterer.__exit__(None, None, None)
