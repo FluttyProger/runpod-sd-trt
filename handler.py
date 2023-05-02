@@ -29,7 +29,7 @@ def handler(event):
     strength = model_inputs.get('strength', 1.0)
     initimg = model_inputs.get('image', None)
 
-    opts = ImageGenerationOptions(image=initimg, strength=strength, scheduler_id=sampler, prompt=prompt, height=height, negative_prompt=negative, width=width, num_inference_steps=steps, guidance_scale=guidance_scale, seed=seed)
+    opts = ImageGenerationOptions(image=None, strength=strength, scheduler_id=sampler, prompt=prompt, height=height, negative_prompt=negative, width=width, num_inference_steps=steps, guidance_scale=guidance_scale, seed=seed)
 
     if initimg is not None:
         opts.image = Image.open(BytesIO(base64.b64decode(initimg)))
